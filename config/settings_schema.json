@@ -10,18 +10,6 @@
     {
         "name": "General Settings",
         "settings": [
-
-            {
-            "type": "color_palette",
-            "id": "color_palette",
-            "default": {
-                "background": "#ffffff",
-                "foreground": "#000000",
-                "primary": "#121212",
-                "secondary": "#FFFFFF",
-                "accent": "#FF4416"
-            }
-            },
             {
                 "type": "image_picker",
                 "id": "favicon",
