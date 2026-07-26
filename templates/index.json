@@ -29,13 +29,13 @@
           "name": "Heading",
           "settings": {
             "text_heading": "Short heading here",
-            "text_color": "#ffffff",
+            "text_color": "{{ settings.color_palette.background }}",
             "alignment": "left",
-            "font_size": 2.5,
-            "line_height": "1.1",
+            "font_size": 3,
+            "line_height": "1.6",
             "letter_spacing": "normal",
-            "case": "none",
-            "wrap": "pretty",
+            "case": "uppercase",
+            "wrap": "balance",
             "width": "fit-content",
             "max_width": "none",
             "background": false,
@@ -53,15 +53,15 @@
           "name": "Description",
           "settings": {
             "richtext_paragraph": "<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>",
-            "text_color": "#ffffff",
+            "text_color": "{{ settings.color_palette.background }}",
             "alignment": "left",
             "font_size": 1,
             "line_height": "normal",
             "letter_spacing": "normal",
-            "case": "none",
+            "case": "lowercase",
             "wrap": "pretty",
             "width": "fit-content",
-            "max_width": "30rem",
+            "max_width": "none",
             "background": false,
             "background_color": "#00000026",
             "corner_radius": 0,
@@ -72,20 +72,20 @@
           },
           "blocks": {}
         },
-        "button": {
+        "button_4UryPR": {
           "type": "button",
           "name": "Button",
           "settings": {
-            "url_button_link": "shopify://collections/all",
+            "url_button_link": "",
             "text_button_text": "More Information",
             "open_in_new_tab": false,
-            "style_class": "button",
-            "custom_button_background": "rgba(0,0,0,0)",
+            "style_class": "button-custom",
+            "custom_button_background": "#459A24",
             "custom_button_text": "#ffffff",
-            "custom_button_border": "#ffffff",
+            "custom_button_border": "rgba(0,0,0,0)",
             "width": "fit-content",
             "custom_width": 100,
-            "width_mobile": "fit-content",
+            "width_mobile": "custom",
             "custom_width_mobile": 100
           },
           "blocks": {}
@@ -94,7 +94,7 @@
       "block_order": [
         "heading",
         "description",
-        "button"
+        "button_4UryPR"
       ],
       "settings": {
         "image_image_1": "shopify://shop_images/category-lifestyle.jpg",
@@ -122,9 +122,9 @@
         "media_type_2_mobile": "image",
         "section_width": "page-width",
         "section_height": "medium",
-        "section_height_custom": 50,
-        "padding-block-start": 24,
-        "padding-block-end": 24,
+        "section_height_custom": 40,
+        "padding-block-start": 76,
+        "padding-block-end": 56,
         "open_in_new_tab": false
       }
     },
