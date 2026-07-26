@@ -1,0 +1,130 @@
+<div li-block="Button" class="button-group" {{ block.shopify_attributes }}>
+                    <div style="--btn-bg: {{ block.settings.custom_button_background }}; --btn-text: {{ block.settings.custom_button_text }}; --btn-border: {{ block.settings.custom_button_border }}; --btn-width: {% if block.settings.width == 'fill' %}100%{% elsif block.settings.width == 'custom' %}{{ block.settings.custom_width }}%{% else %}fit-content{% endif %};"><a href="{{ block.settings.url_button_link }}" class="button"> {{ block.settings.text_button_text }} </a></div>
+                    
+                </div> {% schema %} {
+    "name": "Button",
+    "settings": [
+        {
+            "id": "url_button_link",
+            "type": "url",
+            "label": "Button-Link"
+        },
+        {
+            "id": "text_button_text",
+            "type": "text",
+            "label": "Button-Text",
+            "default": "More Information"
+        },
+        {
+            "type": "header",
+            "content": "Style"
+        },
+        {
+            "type": "checkbox",
+            "id": "open_in_new_tab",
+            "label": "Open in new tab",
+            "default": false
+        },
+        {
+            "type": "select",
+            "id": "style_class",
+            "label": "Style",
+            "options": [
+                {
+                    "value": "button",
+                    "label": "Solid"
+                },
+                {
+                    "value": "button-custom",
+                    "label": "Outline"
+                }
+            ],
+            "default": "button"
+        },
+        {
+            "type": "color",
+            "id": "custom_button_background",
+            "label": "Background color",
+            "default": "rgba(0,0,0,0)"
+        },
+        {
+            "type": "color",
+            "id": "custom_button_text",
+            "label": "Text color",
+            "default": "#ffffff"
+        },
+        {
+            "type": "color",
+            "id": "custom_button_border",
+            "label": "Border color",
+            "default": "#ffffff"
+        },
+        {
+            "type": "select",
+            "id": "width",
+            "label": "Width",
+            "options": [
+                {
+                    "value": "fit-content",
+                    "label": "Fit content"
+                },
+                {
+                    "value": "fill",
+                    "label": "Fill"
+                },
+                {
+                    "value": "custom",
+                    "label": "Custom"
+                }
+            ],
+            "default": "fit-content"
+        },
+        {
+            "type": "range",
+            "id": "custom_width",
+            "min": 10,
+            "max": 100,
+            "step": 5,
+            "unit": "%",
+            "label": "Custom width (when Width = Custom)",
+            "default": 100
+        },
+        {
+            "type": "select",
+            "id": "width_mobile",
+            "label": "Width (mobile)",
+            "options": [
+                {
+                    "value": "fit-content",
+                    "label": "Fit content"
+                },
+                {
+                    "value": "fill",
+                    "label": "Fill"
+                },
+                {
+                    "value": "custom",
+                    "label": "Custom"
+                }
+            ],
+            "default": "fit-content"
+        },
+        {
+            "type": "range",
+            "id": "custom_width_mobile",
+            "min": 10,
+            "max": 100,
+            "step": 5,
+            "unit": "%",
+            "label": "Custom width mobile (when Width mobile = Custom)",
+            "default": 100
+        }
+    ],
+    "presets": [
+        {
+            "name": "Button",
+            "blocks": []
+        }
+    ],
+    "tag": null
+} {% endschema %}

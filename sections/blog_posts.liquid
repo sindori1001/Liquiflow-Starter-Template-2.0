@@ -1,0 +1,60 @@
+<div class="padding-global padding-section-medium" style="padding-top: {{ section.settings.padding_top }}px; padding-bottom: {{ section.settings.padding_bottom }}px;"><div class="container-large"><div class="headline-wrapper"><h2 class="heading-style-h2">
+{{ section.settings.text_heading }}
+</h2><a href="{{ section.settings.url_button_link }}" class="button is-small"> {{ section.settings.text_button_text }} </a></div><div class="blog_component"><div class="blog_featured-item"><div class="blog_featured-image-link">{% assign article = articles[section.settings.article_article] %} <a li-object:href="article.url" href="{{ article.url }}" class="blog_featured-image-wrapper"><div class="blog_titel-wrapper"><h3 li-object="article.title" class="heading-style-h4">{{ article.title }}</h3><div li-object="article.excerpt | truncate: 25" class="text-size-regular">{{ article.excerpt | truncate: 25 }}</div></div><img alt="" loading="lazy" li-object:src="article.image.src | image_url: width: 600" src="{{ article.image.src | image_url: width: 600 }}" class="blog_featured-image"><div class="blog_overlay"></div></a></div><div class="blog_two-articles">{% assign blog = blogs[section.settings.blog_blog] %}
+{% for article in blog.articles limit: section.settings.post_limit_blog %}
+<div class="blog_featured-item-content">
+<a li-object:href="article.url" href="{{ article.url }}" class="blog_featured-title-link"><h3 li-object="article.title" class="heading-style-h4">{{ article.title }}</h3></a><div li-object="article.excerpt | truncate: 25" class="text-size-regular">{{ article.excerpt | truncate: 25 }}</div><div class="spacer-small"></div><a li-object:href="article.url" href="{{ article.url }}" class="button is-link is-icon"><div>Read now</div><div class="icon-embed-xxsmall"><svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 3L11 8L6 13" stroke="CurrentColor" stroke-width="1.5"></path></svg></div></a></div>
+{% endfor %}</div></div></div></div></div> {% schema %} {
+    "tag": "section",
+    "name": "Blog posts",
+    "class": "section_blog",
+    "settings": [
+        {
+            "id": "text_heading",
+            "type": "text",
+            "label": "Heading",
+            "default": "Short heading here"
+        },
+        {
+            "id": "text_button_text",
+            "type": "text",
+            "label": "Button-Text",
+            "default": "All\n                Articles"
+        },
+        {
+            "id": "url_button_link",
+            "type": "url",
+            "label": "Button-Link"
+        },
+        {
+            "id": "article_article",
+            "type": "article",
+            "label": "Article"
+        },
+        {
+            "id": "blog_blog",
+            "type": "blog",
+            "label": "Blog"
+        },
+        {
+            "id": "post_limit_blog",
+            "type": "range",
+            "label": "Posts Blog",
+            "min": 1,
+            "max": 100,
+            "step": 1,
+            "default": 3
+        },
+        {
+            "type": "header",
+            "content": "Abst\u00e4nde"
+        }
+    ],
+    "presets": [
+        {
+            "name": "Blog posts",
+            "category": "Liquify",
+            "blocks": []
+        }
+    ]
+} {% endschema %}
