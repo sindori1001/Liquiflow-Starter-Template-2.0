@@ -1,60 +1,189 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
-    "sections": {
-        "image_with_text": {
-            "type": "image_with_text"
-        },
-        "hero": {
-            "type": "hero",
-            "blocks": {
-                "heading": {
-                    "type": "heading",
-                    "name": "Heading"
-                },
-                "description": {
-                    "type": "description",
-                    "name": "Description"
-                },
-                "button": {
-                    "type": "button",
-                    "name": "Button"
-                }
-            },
-            "block_order": [
-                "heading",
-                "description",
-                "button"
-            ]
-        },
-        "featured_products": {
-            "type": "featured_products"
-        },
-        "featured_collections": {
-            "type": "featured_collections",
-            "blocks": {
-                "block": {
-                    "type": "block",
-                    "name": "Block"
-                }
-            },
-            "block_order": [
-                "block"
-            ]
-        },
-        "blog_posts": {
-            "type": "blog_posts"
-        },
-        "custom_liquid": {
-            "type": "custom_liquid"
-        }
+  "sections": {
+    "image_with_text": {
+      "type": "image_with_text",
+      "settings": {
+        "text_heading": "Short heading here",
+        "richtext_paragraph": "<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>",
+        "url_button_link": "",
+        "text_button_text": "More Information",
+        "overlay_strength": 100
+      }
     },
-    "layout": "theme",
-    "wrapper": "main.main-wrapper",
-    "order": [
-        "image_with_text",
-        "hero",
-        "featured_products",
-        "featured_collections",
-        "blog_posts",
-        "custom_liquid"
-    ]
+    "hero": {
+      "type": "hero",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "name": "Heading",
+          "settings": {
+            "text_heading": "Short heading here",
+            "text_color": "#ffffff",
+            "alignment": "left",
+            "font_size": 2.5,
+            "line_height": "1.1",
+            "letter_spacing": "normal",
+            "case": "none",
+            "wrap": "pretty",
+            "width": "fit-content",
+            "max_width": "none",
+            "background": false,
+            "background_color": "#00000026",
+            "corner_radius": 0,
+            "padding_top": 0,
+            "padding_bottom": 0,
+            "padding_left": 0,
+            "padding_right": 0
+          },
+          "blocks": {}
+        },
+        "description": {
+          "type": "description",
+          "name": "Description",
+          "settings": {
+            "richtext_paragraph": "<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>",
+            "text_color": "#ffffff",
+            "alignment": "left",
+            "font_size": 1,
+            "line_height": "normal",
+            "letter_spacing": "normal",
+            "case": "none",
+            "wrap": "pretty",
+            "width": "fit-content",
+            "max_width": "30rem",
+            "background": false,
+            "background_color": "#00000026",
+            "corner_radius": 0,
+            "padding_top": 0,
+            "padding_bottom": 0,
+            "padding_left": 0,
+            "padding_right": 0
+          },
+          "blocks": {}
+        },
+        "button": {
+          "type": "button",
+          "name": "Button",
+          "settings": {
+            "url_button_link": "",
+            "text_button_text": "More Information",
+            "open_in_new_tab": false,
+            "style_class": "button",
+            "custom_button_background": "rgba(0,0,0,0)",
+            "custom_button_text": "#ffffff",
+            "custom_button_border": "#ffffff",
+            "width": "fit-content",
+            "custom_width": 100,
+            "width_mobile": "fit-content",
+            "custom_width_mobile": 100
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "heading",
+        "description",
+        "button"
+      ],
+      "settings": {
+        "image_image_1": "shopify://shop_images/category-basketball.jpg",
+        "image_image_2_mobile": "shopify://shop_images/category-lifestyle.jpg",
+        "background_color": "rgba(0,0,0,0)",
+        "toggle_overlay": false,
+        "overlay_color": "#12121266",
+        "overlay_style": "solid",
+        "gradient_direction": "to bottom",
+        "overlay_strength": 100,
+        "blurred_reflection": false,
+        "reflection_opacity": 75,
+        "content_direction": "column",
+        "horizontal_alignment": "center",
+        "vertical_alignment": "flex-end",
+        "horizontal_alignment_flex_direction_column": "center",
+        "vertical_alignment_flex_direction_column": "center",
+        "align_baseline": false,
+        "gap": 20,
+        "media_type_1": "image",
+        "media_type_2": "image",
+        "stack_media_on_mobile": false,
+        "custom_mobile_media": true,
+        "media_type_1_mobile": "image",
+        "media_type_2_mobile": "image",
+        "section_width": "page-width",
+        "section_height": "custom",
+        "section_height_custom": 25,
+        "padding-block-start": 24,
+        "padding-block-end": 76,
+        "open_in_new_tab": false
+      }
+    },
+    "featured_products": {
+      "type": "featured_products",
+      "settings": {
+        "text_heading": "Short heading here",
+        "url_button_link": "",
+        "text_button_text": "All products",
+        "collection_collection": "",
+        "collection_collection_limit": 6,
+        "columns": 4
+      }
+    },
+    "featured_collections": {
+      "type": "featured_collections",
+      "blocks": {
+        "block": {
+          "type": "block",
+          "name": "Block",
+          "settings": {
+            "url_link": "",
+            "text_heading": "Bestselling"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "block"
+      ],
+      "settings": {
+        "text_heading": "Short heading here",
+        "columns": 3
+      }
+    },
+    "blog_posts": {
+      "type": "blog_posts",
+      "settings": {
+        "text_heading": "Short heading here",
+        "text_button_text": "All                Articles",
+        "url_button_link": "",
+        "article_article": "",
+        "blog_blog": "news",
+        "post_limit_blog": 3
+      }
+    },
+    "custom_liquid": {
+      "type": "custom_liquid",
+      "settings": {
+        "custom_liquid": ""
+      }
+    }
+  },
+  "layout": "theme",
+  "wrapper": "main.main-wrapper",
+  "order": [
+    "image_with_text",
+    "hero",
+    "featured_products",
+    "featured_collections",
+    "blog_posts",
+    "custom_liquid"
+  ]
 }
