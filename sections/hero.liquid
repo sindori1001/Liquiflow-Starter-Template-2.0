@@ -1,4 +1,4 @@
-<div class="header_background-image-wrapper" style="--mobile-media-direction: {% if section.settings.stack_media_on_mobile %}column{% else %}row{% endif %};">{% if section.settings.toggle_overlay %}    <div li-if="section.settings.toggle_overlay">
+<div class="hero_root" style="--section-min-height: {% case section.settings.section_height %}{% when 'small' %}40vh{% when 'large' %}90vh{% when 'custom' %}{{ section.settings.section_height_custom }}vh{% else %}72vh{% endcase %}; --section-width: {% if section.settings.section_width == 'full-width' %}100%{% else %}min(var(--container--large), 100% - 3rem){% endif %}; background: {{ section.settings.background_color }}; --section-padding-top: {{ section.settings['padding-block-start'] }}px; --section-padding-bottom: {{ section.settings['padding-block-end'] }}px; --content-direction: {{ section.settings.content_direction }}; --gap: {{ section.settings.gap }}px; --justify-content: {% if section.settings.content_direction == 'column' %}{{ section.settings.horizontal_alignment_flex_direction_column }}{% else %}{{ section.settings.horizontal_alignment }}{% endif %}; --align-items: {% if section.settings.align_baseline %}baseline{% elsif section.settings.content_direction == 'column' %}{{ section.settings.vertical_alignment_flex_direction_column }}{% else %}{{ section.settings.vertical_alignment }}{% endif %};"><div class="header_background-image-wrapper" style="--mobile-media-direction: {% if section.settings.stack_media_on_mobile %}column{% else %}row{% endif %};">{% if section.settings.toggle_overlay %}    <div li-if="section.settings.toggle_overlay">
     <div class="header_overlay-layer" style="background: {% if section.settings.overlay_style == 'gradient' %}linear-gradient({{ section.settings.gradient_direction }}, transparent, {{ section.settings.overlay_color }}){% else %}{{ section.settings.overlay_color }}{% endif %}; opacity: {{ section.settings.overlay_strength | divided_by: 100.0 }};"></div>    </div>
 {% endif %}{% if section.settings.blurred_reflection %}    <div li-if="section.settings.blurred_reflection">
     <div class="header_reflection-layer" style="background-color: {{ section.settings.overlay_color }}; opacity: {{ section.settings.reflection_opacity | divided_by: 100.0 }};"></div>    </div>
@@ -28,10 +28,10 @@
 {% endif %}</div>    </div>
 {% endif %}</div><div class="padding-global"><div class="container-large"><div class="header_card text-color-white"><div class="max-width-large hero_content"><div class="hero_blocks" li-cf-theme-blocks="">
 {% content_for 'blocks' %}
-</div></div></div></div></div> {% schema %} {
+</div></div></div></div></div></div> {% schema %} {
     "tag": "header",
     "name": "Hero",
-    "class": "section_header-home",
+    "class": "section_hero",
     "blocks": [
         {
             "type": "heading"

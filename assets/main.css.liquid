@@ -1944,7 +1944,7 @@ input.mini-cart_line-item_quantity-adjust::-webkit-inner-spin-button {
 .section_content-header:has(.header_background-image-wrapper),
 .section_small-hero:has(.header_background-image-wrapper) {
   position: relative;
-  width: var(--section-width, min(var(--container--large), 100% - 3rem));
+  width: min(var(--container--large), 100% - 3rem);
   margin-left: auto;
   margin-right: auto;
   margin-top: 1.25rem;
@@ -1955,16 +1955,49 @@ input.mini-cart_line-item_quantity-adjust::-webkit-inner-spin-button {
 
 .section_header-home {
   display: flex;
-  align-items: var(--align-items, flex-end);
-  min-height: var(--section-min-height, 72vh);
-  padding-top: var(--section-padding-top, 8rem);
-  padding-bottom: var(--section-padding-bottom, 3.5rem);
+  align-items: flex-end;
+  min-height: 72vh;
+  padding-top: 8rem;
+  padding-bottom: 3.5rem;
 }
 
 .section_header-home .padding-global {
   position: relative;
   z-index: 2;
   width: 100%;
+}
+
+/* Hero section — same "inset card" look, but every dynamic setting lives on
+   .hero_root (an inner div) instead of the section root, since Liquiflow's
+   converter regenerates the li-section element from schema tag/class and
+   drops any other attributes placed directly on it. */
+.hero_root {
+  position: relative;
+  width: var(--section-width, min(var(--container--large), 100% - 3rem));
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1.25rem;
+  border-radius: var(--radius--xlarge);
+  overflow: hidden;
+  box-shadow: var(--shadow--sm);
+  display: flex;
+  align-items: var(--align-items, flex-end);
+  min-height: var(--section-min-height, 72vh);
+  padding-top: var(--section-padding-top, 8rem);
+  padding-bottom: var(--section-padding-bottom, 3.5rem);
+}
+
+.hero_root .padding-global {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+}
+
+@media (max-width: 767px) {
+  .hero_root {
+    width: calc(100% - 1.5rem);
+    margin-top: 0.75rem;
+  }
 }
 
 .header_card {
