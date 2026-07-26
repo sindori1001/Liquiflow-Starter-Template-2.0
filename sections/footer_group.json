@@ -1,1 +1,32 @@
-{"type":"footer","name":"Footer Group","sections":{"footer":{"type":"footer","settings":{}}},"order":["footer"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "type": "footer",
+  "name": "Footer Group",
+  "sections": {
+    "footer": {
+      "type": "footer",
+      "custom_css": [],
+      "settings": {
+        "text_heading": "Signup for Newsletter",
+        "text_checkbox": "By subscribing you agree to with our Privacy Policy and provide consent to receive updates from our company.",
+        "text_delivery": "Delivery",
+        "text_payment_method": "Payment Method",
+        "text_social_media": "Social Media",
+        "text_shop_name": "Starter Theme",
+        "placeholder_text": "Email address",
+        "footer_menu": "footer"
+      }
+    }
+  },
+  "order": [
+    "footer"
+  ]
+}
