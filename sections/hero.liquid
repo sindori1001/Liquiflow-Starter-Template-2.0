@@ -34,10 +34,7 @@
     "class": "section_hero",
     "blocks": [
         {
-            "type": "heading"
-        },
-        {
-            "type": "description"
+            "type": "text"
         },
         {
             "type": "button"
@@ -90,7 +87,8 @@
             "type": "color",
             "id": "overlay_color",
             "label": "Overlay color",
-            "default": "#12121266"
+            "alpha": true,
+            "default": "{{ settings.colors.text }}"
         },
         {
             "type": "select",
@@ -179,6 +177,13 @@
             "default": "column"
         },
         {
+            "type": "checkbox",
+            "id": "vertical_on_mobile",
+            "label": "Stack vertically on mobile",
+            "default": true,
+            "visible_if": "{{ section.settings.content_direction == 'row' }}"
+        },
+        {
             "type": "select",
             "id": "horizontal_alignment",
             "label": "Horizontal alignment",
@@ -200,7 +205,8 @@
                     "label": "Space between"
                 }
             ],
-            "default": "space-between"
+            "default": "space-between",
+            "visible_if": "{{ section.settings.content_direction == 'row' }}"
         },
         {
             "type": "select",
@@ -220,7 +226,8 @@
                     "label": "Bottom"
                 }
             ],
-            "default": "flex-end"
+            "default": "flex-end",
+            "visible_if": "{{ section.settings.content_direction == 'row' }}"
         },
         {
             "type": "select",
@@ -240,7 +247,8 @@
                     "label": "Right"
                 }
             ],
-            "default": "center"
+            "default": "center",
+            "visible_if": "{{ section.settings.content_direction != 'row' }}"
         },
         {
             "type": "select",
@@ -260,13 +268,15 @@
                     "label": "Bottom"
                 }
             ],
-            "default": "flex-end"
+            "default": "flex-end",
+            "visible_if": "{{ section.settings.content_direction == 'column' }}"
         },
         {
             "type": "checkbox",
             "id": "align_baseline",
             "label": "Align content to text baseline",
-            "default": false
+            "default": false,
+            "visible_if": "{{ section.settings.vertical_alignment == 'flex-end' }}"
         },
         {
             "type": "range",
@@ -469,10 +479,10 @@
             "category": "Content",
             "blocks": [
                 {
-                    "type": "heading"
+                    "type": "text"
                 },
                 {
-                    "type": "description"
+                    "type": "text"
                 },
                 {
                     "type": "button"

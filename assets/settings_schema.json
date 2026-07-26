@@ -1,0 +1,25 @@
+[
+  {
+    "name": "theme_info",
+    "theme_name": "Starter Theme",
+    "theme_author": "Liquiflow",
+    "theme_version": "1.0.0"
+  },
+  {
+    "name": "Colors",
+    "settings": [
+      {
+        "type": "color_palette",
+        "id": "colors",
+        "label": "Color palette",
+        "default": {
+          "primary": "#37352f",
+          "secondary": "#ffffff",
+          "accent": "#2d62ff",
+          "background": "#f7f6f3",
+          "text": "#37352f"
+        }
+      }
+    ]
+  }
+]
