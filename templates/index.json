@@ -126,14 +126,15 @@
         "open_in_new_tab": false
       }
     },
-    "featured_products": {
+    "featured_products_FbQLgH": {
       "type": "featured_products",
+      "name": "Featured products",
       "settings": {
         "text_heading": "Short heading here",
         "url_button_link": "",
         "text_button_text": "All products",
-        "collection_collection": "",
-        "collection_collection_limit": 6,
+        "collection_collection": "running",
+        "collection_collection_limit": 24,
         "columns": 4
       }
     },
@@ -145,13 +146,36 @@
           "name": "Block",
           "settings": {
             "url_link": "",
-            "text_heading": "Bestselling"
+            "text_heading": "Bestselling",
+            "image_image": "shopify://shop_images/category-lifestyle.jpg"
+          },
+          "blocks": {}
+        },
+        "block_thdhNT": {
+          "type": "block",
+          "name": "Block",
+          "settings": {
+            "url_link": "",
+            "text_heading": "Bestselling",
+            "image_image": "shopify://shop_images/category-running.jpg"
+          },
+          "blocks": {}
+        },
+        "block_FeBDtU": {
+          "type": "block",
+          "name": "Block",
+          "settings": {
+            "url_link": "",
+            "text_heading": "Bestselling",
+            "image_image": "shopify://shop_images/category-basketball.jpg"
           },
           "blocks": {}
         }
       },
       "block_order": [
-        "block"
+        "block",
+        "block_thdhNT",
+        "block_FeBDtU"
       ],
       "settings": {
         "text_heading": "Short heading here",
@@ -181,7 +205,7 @@
   "order": [
     "image_with_text",
     "hero",
-    "featured_products",
+    "featured_products_FbQLgH",
     "featured_collections",
     "blog_posts",
     "custom_liquid"
