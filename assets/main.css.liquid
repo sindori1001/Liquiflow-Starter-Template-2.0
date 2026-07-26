@@ -1872,12 +1872,10 @@ input.mini-cart_line-item_quantity-adjust::-webkit-inner-spin-button {
   .header_background-image-wrapper {
     flex-direction: var(--mobile-media-direction, row);
   }
-
-  .header_background-image-slot.has-mobile-media .header_background-image--desktop {
+  .header_background-image-slot .has-mobile-media .header_background-image--desktop {
     display: none;
   }
-
-  .header_background-image-slot.has-mobile-media .header_background-image--mobile {
+  .header_background-image-slot .has-mobile-media .header_background-image--mobile {
     display: block;
   }
 }
@@ -1927,6 +1925,20 @@ input.mini-cart_line-item_quantity-adjust::-webkit-inner-spin-button {
   color: inherit;
 }
 
+.hero_group {
+  background-color: var(--group-bg, transparent);
+  border-radius: var(--group-radius, 0);
+  padding: var(--group-padding, 0);
+}
+
+.hero_group-blocks {
+  display: flex;
+  flex-direction: var(--group-direction, row);
+  justify-content: var(--group-justify, flex-start);
+  align-items: var(--group-align, flex-start);
+  gap: var(--group-gap, 1rem);
+}
+
 /* Inset-Karte für alle Bild-Heroes */
 .section_header-home,
 .section_content-header:has(.header_background-image-wrapper),
@@ -1943,7 +1955,7 @@ input.mini-cart_line-item_quantity-adjust::-webkit-inner-spin-button {
 
 .section_header-home {
   display: flex;
-  align-items: flex-end;
+  align-items: var(--align-items, flex-end);
   min-height: var(--section-min-height, 72vh);
   padding-top: var(--section-padding-top, 8rem);
   padding-bottom: var(--section-padding-bottom, 3.5rem);
@@ -3348,4 +3360,8 @@ input.mini-cart_line-item_quantity-adjust::-webkit-inner-spin-button {
 .swiper-button-disabled {
   opacity: 0.4;
   pointer-events: none;
+}
+
+.header_card.text-color-white {
+  max-width: 34rem;
 }

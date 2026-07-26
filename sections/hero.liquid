@@ -2,31 +2,31 @@
     <div class="header_overlay-layer" style="background: {% if section.settings.overlay_style == 'gradient' %}linear-gradient({{ section.settings.gradient_direction }}, transparent, {{ section.settings.overlay_color }}){% else %}{{ section.settings.overlay_color }}{% endif %}; opacity: {{ section.settings.overlay_strength | divided_by: 100.0 }};"></div>    </div>
 {% endif %}{% if section.settings.blurred_reflection %}    <div li-if="section.settings.blurred_reflection">
     <div class="header_reflection-layer" style="background-color: {{ section.settings.overlay_color }}; opacity: {{ section.settings.reflection_opacity | divided_by: 100.0 }};"></div>    </div>
-{% endif %}{% if section.settings.media_type_1 == 'image' %}    <div li-if="section.settings.media_type_1 == 'image'" class="header_background-image-slot">
+{% endif %}{% if section.settings.media_type_1 == 'image' and section.settings.image_image_1 != blank %}    <div li-if="section.settings.media_type_1 == 'image' and section.settings.image_image_1 != blank" class="header_background-image-slot">
     <div class="{% if section.settings.custom_mobile_media %}has-mobile-media{% endif %}">{% if section.settings.image_image_1 %}
 {{ section.settings.image_image_1 | image_url: width: 1000 | image_tag: loading: 'eager', class: 'header_background-image header_background-image--desktop' }}
 {% else %}
 <img src="{{ 'placeholder.svg' | asset_url }}" loading="eager" alt="" class="header_background-image header_background-image--desktop">
-{% endif %}{% if section.settings.custom_mobile_media and section.settings.media_type_1_mobile == 'image' %}    <div li-if="section.settings.custom_mobile_media and section.settings.media_type_1_mobile == 'image'">
+{% endif %}{% if section.settings.custom_mobile_media and section.settings.media_type_1_mobile == 'image' and section.settings.image_image_1_mobile != blank %}    <div li-if="section.settings.custom_mobile_media and section.settings.media_type_1_mobile == 'image' and section.settings.image_image_1_mobile != blank">
     {% if section.settings.image_image_1_mobile %}
 {{ section.settings.image_image_1_mobile | image_url: width: 750 | image_tag: loading: 'eager', class: 'header_background-image header_background-image--mobile' }}
 {% else %}
 <img src="{{ 'placeholder.svg' | asset_url }}" loading="eager" alt="" class="header_background-image header_background-image--mobile">
 {% endif %}    </div>
 {% endif %}</div>    </div>
-{% endif %}{% if section.settings.media_type_2 == 'image' %}    <div li-if="section.settings.media_type_2 == 'image'" class="header_background-image-slot">
+{% endif %}{% if section.settings.media_type_2 == 'image' and section.settings.image_image_2 != blank %}    <div li-if="section.settings.media_type_2 == 'image' and section.settings.image_image_2 != blank" class="header_background-image-slot">
     <div class="{% if section.settings.custom_mobile_media %}has-mobile-media{% endif %}">{% if section.settings.image_image_2 %}
 {{ section.settings.image_image_2 | image_url: width: 1000 | image_tag: loading: 'eager', class: 'header_background-image header_background-image--desktop' }}
 {% else %}
 <img src="{{ 'placeholder.svg' | asset_url }}" loading="eager" alt="" class="header_background-image header_background-image--desktop">
-{% endif %}{% if section.settings.custom_mobile_media and section.settings.media_type_2_mobile == 'image' %}    <div li-if="section.settings.custom_mobile_media and section.settings.media_type_2_mobile == 'image'">
+{% endif %}{% if section.settings.custom_mobile_media and section.settings.media_type_2_mobile == 'image' and section.settings.image_image_2_mobile != blank %}    <div li-if="section.settings.custom_mobile_media and section.settings.media_type_2_mobile == 'image' and section.settings.image_image_2_mobile != blank">
     {% if section.settings.image_image_2_mobile %}
 {{ section.settings.image_image_2_mobile | image_url: width: 750 | image_tag: loading: 'eager', class: 'header_background-image header_background-image--mobile' }}
 {% else %}
 <img src="{{ 'placeholder.svg' | asset_url }}" loading="eager" alt="" class="header_background-image header_background-image--mobile">
 {% endif %}    </div>
 {% endif %}</div>    </div>
-{% endif %}</div><div class="padding-global"><div class="container-large"><div class="header_card text-color-white"><div class="max-width-large hero_content" style="--content-direction: {{ section.settings.content_direction }}; --gap: {{ section.settings.gap }}px; --justify-content: {% if section.settings.content_direction == 'column' %}{{ section.settings.horizontal_alignment_flex_direction_column }}{% else %}{{ section.settings.horizontal_alignment }}{% endif %}; --align-items: {% if section.settings.align_baseline %}baseline{% elsif section.settings.content_direction == 'column' %}{{ section.settings.vertical_alignment_flex_direction_column }}{% else %}{{ section.settings.vertical_alignment }}{% endif %};"><div class="hero_blocks" li-cf-theme-blocks="">
+{% endif %}</div><div class="padding-global"><div class="container-large"><div class="header_card text-color-white"><div class="max-width-large hero_content"><div class="hero_blocks" li-cf-theme-blocks="">
 {% content_for 'blocks' %}
 </div></div></div></div></div> {% schema %} {
     "tag": "header",
@@ -41,6 +41,9 @@
         },
         {
             "type": "button"
+        },
+        {
+            "type": "group"
         },
         {
             "type": "@app"
@@ -263,7 +266,7 @@
             "type": "checkbox",
             "id": "align_baseline",
             "label": "Align content to text baseline",
-            "default": true
+            "default": false
         },
         {
             "type": "range",
@@ -473,6 +476,9 @@
                 },
                 {
                     "type": "button"
+                },
+                {
+                    "type": "group"
                 }
             ]
         }
