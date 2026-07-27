@@ -1,15 +1,5 @@
 <div li-block="Group" {{ block.shopify_attributes }}>
-                    <div class="hero_group" style="--group-direction: {{ block.settings.content_direction }}; --group-mobile-column: {% if block.settings.vertical_on_mobile %}1{% else %}0{% endif %}; --group-justify: {% if block.settings.content_direction == 'row' %}{{ block.settings.horizontal_alignment }}{% else %}{{ block.settings.horizontal_alignment_flex_direction_column }}{% endif %}; --group-align: {% if block.settings.align_baseline %}baseline{% elsif block.settings.content_direction == 'row' %}{{ block.settings.vertical_alignment }}{% else %}{{ block.settings.vertical_alignment_flex_direction_column }}{% endif %}; --group-gap: {{ block.settings.gap }}px; --group-width: {% if block.settings.width == 'fill' %}100%{% elsif block.settings.width == 'custom' %}{{ block.settings.custom_width }}%{% else %}fit-content{% endif %}; --group-height: {% if block.settings.height == 'fill' %}100%{% elsif block.settings.height == 'custom' %}{{ block.settings.custom_height }}%{% else %}fit-content{% endif %}; --group-bg: {% if block.settings.background_media == 'none' %}{{ block.settings.background_color }}{% else %}transparent{% endif %}; --group-radius: {{ block.settings.border_radius }}px; --group-border-style: {{ block.settings.border }}; --group-border-width: {{ block.settings.border_width }}px; --group-border-color: {{ block.settings.border_color }}; --group-border-opacity: {{ block.settings.border_opacity }}%; --group-padding: {{ block.settings['padding-block-start'] }}px {{ block.settings['padding-inline-end'] }}px {{ block.settings['padding-block-end'] }}px {{ block.settings['padding-inline-start'] }}px;">{% if block.settings.link != blank %}    <div li-if="block.settings.link != blank">
-    <a href="{{ block.settings.url_group_link }}" class="hero_group-link"> </a>    </div>
-{% endif %}{% if block.settings.background_media == 'image' and block.settings.image_group_background != blank %}    <div li-if="block.settings.background_media == 'image' and block.settings.image_group_background != blank" class="hero_group-media">
-    {% if block.settings.image_group_background %}
-{{ block.settings.image_group_background | image_url: width: 1200 | image_tag: loading: 'lazy', class: 'hero_group-media-img' }}
-{% else %}
-<img src="{{ 'placeholder.svg' | asset_url }}" loading="lazy" alt="" class="hero_group-media-img">
-{% endif %}    </div>
-{% endif %}{% if block.settings.toggle_overlay %}    <div li-if="block.settings.toggle_overlay">
-    <div class="hero_group-overlay" style="background: {% if block.settings.overlay_style == 'gradient' %}linear-gradient({{ block.settings.gradient_direction }}, transparent, {{ block.settings.overlay_color }}){% else %}{{ block.settings.overlay_color }}{% endif %};"></div>    </div>
-{% endif %}<div class="hero_group-blocks" li-cf-theme-blocks="theme">
+                    <div class="hero_group" style="--group-direction: {{ block.settings.content_direction }}; --group-gap: {{ block.settings.gap }}px; --group-justify: {{ block.settings.horizontal_alignment }}; --group-align: {{ block.settings.vertical_alignment }}; --group-bg: {% if block.settings.background %}{{ block.settings.background_color }}{% else %}transparent{% endif %}; --group-radius: {{ block.settings.corner_radius }}px; --group-padding: {{ block.settings.padding_top }}px {{ block.settings.padding_right }}px {{ block.settings.padding_bottom }}px {{ block.settings.padding_left }}px;"><div class="hero_group-blocks" li-cf-theme-blocks="">
 {% content_for 'blocks' %}
 </div></div>
                     
@@ -17,23 +7,12 @@
     "name": "Group",
     "blocks": [
         {
-            "type": "@theme"
-        },
-        {
-            "type": "@app"
+            "type": "@app",
+
+            "type": "@theme",
         }
     ],
     "settings": [
-        {
-            "id": "url_group_link",
-            "type": "url",
-            "label": "Group-Link"
-        },
-        {
-            "id": "image_group_background",
-            "type": "image_picker",
-            "label": "Group Background"
-        },
         {
             "type": "header",
             "content": "Style"
@@ -53,12 +32,6 @@
                 }
             ],
             "default": "row"
-        },
-        {
-            "type": "checkbox",
-            "id": "vertical_on_mobile",
-            "label": "Stack vertically on mobile",
-            "default": true
         },
         {
             "type": "select",
@@ -105,306 +78,42 @@
             "default": "center"
         },
         {
-            "type": "checkbox",
-            "id": "align_baseline",
-            "label": "Align content to text baseline",
-            "default": false
-        },
-        {
-            "type": "select",
-            "id": "horizontal_alignment_flex_direction_column",
-            "label": "Horizontal alignment",
-            "options": [
-                {
-                    "value": "flex-start",
-                    "label": "Left"
-                },
-                {
-                    "value": "center",
-                    "label": "Center"
-                },
-                {
-                    "value": "flex-end",
-                    "label": "Right"
-                }
-            ],
-            "default": "flex-start"
-        },
-        {
-            "type": "select",
-            "id": "vertical_alignment_flex_direction_column",
-            "label": "Vertical alignment",
-            "options": [
-                {
-                    "value": "flex-start",
-                    "label": "Top"
-                },
-                {
-                    "value": "center",
-                    "label": "Center"
-                },
-                {
-                    "value": "flex-end",
-                    "label": "Bottom"
-                },
-                {
-                    "value": "space-between",
-                    "label": "Space between"
-                }
-            ],
-            "default": "center"
-        },
-        {
             "type": "range",
             "id": "gap",
             "min": 0,
-            "max": 100,
+            "max": 80,
             "step": 4,
             "unit": "px",
             "label": "Gap",
             "default": 16
         },
         {
-            "type": "select",
-            "id": "width",
-            "label": "Width",
-            "options": [
-                {
-                    "value": "fit-content",
-                    "label": "Fit content"
-                },
-                {
-                    "value": "fill",
-                    "label": "Fill"
-                },
-                {
-                    "value": "custom",
-                    "label": "Custom"
-                }
-            ],
-            "default": "fill"
-        },
-        {
-            "type": "range",
-            "id": "custom_width",
-            "min": 0,
-            "max": 100,
-            "step": 1,
-            "unit": "%",
-            "label": "Custom width",
-            "default": 100
-        },
-        {
-            "type": "select",
-            "id": "width_mobile",
-            "label": "Width (mobile)",
-            "options": [
-                {
-                    "value": "fit-content",
-                    "label": "Fit content"
-                },
-                {
-                    "value": "fill",
-                    "label": "Fill"
-                },
-                {
-                    "value": "custom",
-                    "label": "Custom"
-                }
-            ],
-            "default": "fill"
-        },
-        {
-            "type": "range",
-            "id": "custom_width_mobile",
-            "min": 0,
-            "max": 100,
-            "step": 1,
-            "unit": "%",
-            "label": "Custom width (mobile)",
-            "default": 100
-        },
-        {
-            "type": "select",
-            "id": "height",
-            "label": "Height",
-            "options": [
-                {
-                    "value": "fit",
-                    "label": "Fit content"
-                },
-                {
-                    "value": "fill",
-                    "label": "Fill"
-                },
-                {
-                    "value": "custom",
-                    "label": "Custom"
-                }
-            ],
-            "default": "fit"
-        },
-        {
-            "type": "range",
-            "id": "custom_height",
-            "min": 0,
-            "max": 100,
-            "step": 1,
-            "unit": "%",
-            "label": "Custom height",
-            "default": 100
-        },
-        {
-            "type": "select",
-            "id": "background_media",
-            "label": "Background",
-            "options": [
-                {
-                    "value": "none",
-                    "label": "None"
-                },
-                {
-                    "value": "image",
-                    "label": "Image"
-                }
-            ],
-            "default": "none"
-        },
-        {
-            "type": "color_background",
-            "id": "background_color",
-            "label": "Background color",
-            "default": "{{ settings.colors.background }}"
-        },
-        {
-            "type": "select",
-            "id": "background_image_position",
-            "label": "Image fit",
-            "options": [
-                {
-                    "value": "cover",
-                    "label": "Cover"
-                },
-                {
-                    "value": "fit",
-                    "label": "Fit"
-                }
-            ],
-            "default": "cover"
-        },
-        {
             "type": "checkbox",
-            "id": "toggle_overlay",
-            "label": "Show overlay",
+            "id": "background",
+            "label": "Show background",
             "default": false
         },
         {
             "type": "color",
-            "id": "overlay_color",
-            "label": "Overlay color",
-            "alpha": true,
-            "default": "{{ settings.colors.text }}"
-        },
-        {
-            "type": "select",
-            "id": "overlay_style",
-            "label": "Overlay style",
-            "options": [
-                {
-                    "value": "solid",
-                    "label": "Solid"
-                },
-                {
-                    "value": "gradient",
-                    "label": "Gradient"
-                }
-            ],
-            "default": "solid"
-        },
-        {
-            "type": "select",
-            "id": "gradient_direction",
-            "label": "Gradient direction",
-            "options": [
-                {
-                    "value": "to top",
-                    "label": "Up"
-                },
-                {
-                    "value": "to bottom",
-                    "label": "Down"
-                }
-            ],
-            "default": "to top"
-        },
-        {
-            "type": "select",
-            "id": "border",
-            "label": "Border style",
-            "options": [
-                {
-                    "value": "none",
-                    "label": "None"
-                },
-                {
-                    "value": "solid",
-                    "label": "Solid"
-                }
-            ],
-            "default": "none"
+            "id": "background_color",
+            "label": "Background color",
+            "default": "#00000026"
         },
         {
             "type": "range",
-            "id": "border_width",
+            "id": "corner_radius",
             "min": 0,
-            "max": 20,
-            "step": 1,
+            "max": 40,
+            "step": 2,
             "unit": "px",
-            "label": "Border thickness",
-            "default": 1
-        },
-        {
-            "type": "range",
-            "id": "border_opacity",
-            "min": 0,
-            "max": 100,
-            "step": 1,
-            "unit": "%",
-            "label": "Border opacity",
-            "default": 100
-        },
-        {
-            "type": "color",
-            "id": "border_color",
-            "label": "Border color",
-            "default": "{{ settings.colors.primary }}"
-        },
-        {
-            "type": "range",
-            "id": "border_radius",
             "label": "Corner radius",
-            "min": 0,
-            "max": 100,
-            "step": 1,
-            "unit": "px",
             "default": 0
         },
         {
-            "type": "url",
-            "id": "link",
-            "label": "Link entire group to"
-        },
-        {
-            "type": "checkbox",
-            "id": "open_in_new_tab",
-            "label": "Open in new tab",
-            "default": false
-        },
-        {
             "type": "range",
-            "id": "padding-block-start",
+            "id": "padding_top",
             "min": 0,
-            "max": 100,
+            "max": 80,
             "step": 2,
             "unit": "px",
             "label": "Padding top",
@@ -412,9 +121,9 @@
         },
         {
             "type": "range",
-            "id": "padding-block-end",
+            "id": "padding_bottom",
             "min": 0,
-            "max": 100,
+            "max": 80,
             "step": 2,
             "unit": "px",
             "label": "Padding bottom",
@@ -422,9 +131,9 @@
         },
         {
             "type": "range",
-            "id": "padding-inline-start",
+            "id": "padding_left",
             "min": 0,
-            "max": 100,
+            "max": 80,
             "step": 2,
             "unit": "px",
             "label": "Padding left",
@@ -432,9 +141,9 @@
         },
         {
             "type": "range",
-            "id": "padding-inline-end",
+            "id": "padding_right",
             "min": 0,
-            "max": 100,
+            "max": 80,
             "step": 2,
             "unit": "px",
             "label": "Padding right",
@@ -444,11 +153,7 @@
     "presets": [
         {
             "name": "Group",
-            "blocks": [
-                {
-                    "type": "@theme"
-                }
-            ]
+            "blocks": []
         }
     ],
     "tag": null
