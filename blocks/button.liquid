@@ -47,29 +47,25 @@
             "type": "color_background",
             "id": "custom_button_background",
             "label": "Background color",
-            "default": "{{ settings.colors.primary }}",
-            "visible_if": "{{ block.settings.style_class == 'button-custom' }}"
+            "default": "{{ settings.colors.primary }}"
         },
         {
             "type": "color",
             "id": "custom_button_text",
             "label": "Text color",
-            "default": "{{ settings.colors.background }}",
-            "visible_if": "{{ block.settings.style_class == 'button-custom' }}"
+            "default": "{{ settings.colors.background }}"
         },
         {
             "type": "color",
             "id": "custom_button_border",
             "label": "Border color",
-            "default": "{{ settings.colors.primary }}",
-            "visible_if": "{{ block.settings.style_class == 'button-custom' }}"
+            "default": "{{ settings.colors.primary }}"
         },
         {
             "type": "color",
             "id": "link_text_color",
             "label": "Link text color",
-            "default": "{{ settings.colors.primary }}",
-            "visible_if": "{{ block.settings.style_class == 'button-unstyled' }}"
+            "default": "{{ settings.colors.primary }}"
         },
         {
             "type": "checkbox",
@@ -101,8 +97,7 @@
             "step": 5,
             "unit": "%",
             "label": "Custom width (when Width = Custom)",
-            "default": 100,
-            "visible_if": "{{ block.settings.width == 'custom' }}"
+            "default": 100
         },
         {
             "type": "select",
@@ -128,8 +123,7 @@
             "step": 5,
             "unit": "%",
             "label": "Custom width mobile (when Width mobile = Custom)",
-            "default": 100,
-            "visible_if": "{{ block.settings.width_mobile == 'custom' }}"
+            "default": 100
         }
     ],
     "presets": [

@@ -180,8 +180,7 @@
             "type": "checkbox",
             "id": "vertical_on_mobile",
             "label": "Stack vertically on mobile",
-            "default": true,
-            "visible_if": "{{ section.settings.content_direction == 'row' }}"
+            "default": true
         },
         {
             "type": "select",
@@ -205,8 +204,7 @@
                     "label": "Space between"
                 }
             ],
-            "default": "space-between",
-            "visible_if": "{{ section.settings.content_direction == 'row' }}"
+            "default": "space-between"
         },
         {
             "type": "select",
@@ -226,8 +224,7 @@
                     "label": "Bottom"
                 }
             ],
-            "default": "flex-end",
-            "visible_if": "{{ section.settings.content_direction == 'row' }}"
+            "default": "flex-end"
         },
         {
             "type": "select",
@@ -247,8 +244,7 @@
                     "label": "Right"
                 }
             ],
-            "default": "center",
-            "visible_if": "{{ section.settings.content_direction != 'row' }}"
+            "default": "center"
         },
         {
             "type": "select",
@@ -268,15 +264,13 @@
                     "label": "Bottom"
                 }
             ],
-            "default": "flex-end",
-            "visible_if": "{{ section.settings.content_direction == 'column' }}"
+            "default": "flex-end"
         },
         {
             "type": "checkbox",
             "id": "align_baseline",
             "label": "Align content to text baseline",
-            "default": false,
-            "visible_if": "{{ section.settings.vertical_alignment == 'flex-end' }}"
+            "default": false
         },
         {
             "type": "range",

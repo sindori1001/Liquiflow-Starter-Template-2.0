@@ -1,0 +1,26 @@
+<div class="padding-global"><div class="container-large"><div class="heading_blocks" li-cf-theme-blocks="">
+{% content_for 'blocks' %}
+</div></div></div> {% schema %} {
+    "tag": "section",
+    "name": "Heading",
+    "class": "section_heading",
+    "blocks": [
+        {
+            "type": "heading"
+        },
+        {
+            "type": "@app"
+        }
+    ],
+    "presets": [
+        {
+            "name": "Heading",
+            "category": "Liquify",
+            "blocks": [
+                {
+                    "type": "heading"
+                }
+            ]
+        }
+    ]
+} {% endschema %}
