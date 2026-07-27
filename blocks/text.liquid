@@ -54,8 +54,7 @@
             "type": "text_alignment",
             "id": "alignment",
             "label": "Alignment",
-            "default": "left",
-            "visible_if": "{{ block.settings.width == '100%' }}"
+            "default": "left"
         },
         {
             "type": "select",
@@ -151,8 +150,7 @@
                     "label": "72px"
                 }
             ],
-            "default": "1rem",
-            "visible_if": "{{ block.settings.type_preset == 'custom' }}"
+            "default": "1rem"
         },
         {
             "type": "select",
@@ -172,8 +170,7 @@
                     "label": "Loose"
                 }
             ],
-            "default": "normal",
-            "visible_if": "{{ block.settings.type_preset == 'custom' }}"
+            "default": "normal"
         },
         {
             "type": "select",
@@ -193,8 +190,7 @@
                     "label": "Wide"
                 }
             ],
-            "default": "normal",
-            "visible_if": "{{ block.settings.type_preset == 'custom' }}"
+            "default": "normal"
         },
         {
             "type": "select",
@@ -218,8 +214,7 @@
                     "label": "Capitalize"
                 }
             ],
-            "default": "none",
-            "visible_if": "{{ block.settings.type_preset == 'custom' }}"
+            "default": "none"
         },
         {
             "type": "select",
@@ -239,8 +234,7 @@
                     "label": "Pretty"
                 }
             ],
-            "default": "pretty",
-            "visible_if": "{{ block.settings.type_preset == 'custom' }}"
+            "default": "pretty"
         },
         {
             "type": "color",
@@ -258,8 +252,7 @@
             "type": "color_background",
             "id": "background_color",
             "label": "Background color",
-            "default": "{{ settings.colors.accent }}",
-            "visible_if": "{{ block.settings.background }}"
+            "default": "{{ settings.colors.accent }}"
         },
         {
             "type": "range",
@@ -269,8 +262,7 @@
             "step": 2,
             "unit": "px",
             "label": "Corner radius",
-            "default": 0,
-            "visible_if": "{{ block.settings.background }}"
+            "default": 0
         },
         {
             "type": "range",
