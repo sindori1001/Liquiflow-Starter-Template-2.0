@@ -26,7 +26,7 @@
 <img src="{{ 'placeholder.svg' | asset_url }}" loading="eager" alt="" class="header_background-image header_background-image--mobile">
 {% endif %}    </div>
 {% endif %}</div>    </div>
-{% endif %}</div><div class="padding-global"><div class="container-large"><div class="header_card text-color-white"><div class="max-width-large hero_content"><div class="hero_blocks" li-cf-theme-blocks="">
+{% endif %}</div><div class="padding-global"><div class="container-large"><div class="header_card text-color-white"><div class="max-width-large hero_content"><div class="hero_blocks" li-cf-theme-blocks="theme">
 {% content_for 'blocks' %}
 </div></div></div></div></div></div> {% schema %} {
     "tag": "header",
@@ -34,13 +34,7 @@
     "class": "section_hero",
     "blocks": [
         {
-            "type": "text"
-        },
-        {
-            "type": "button"
-        },
-        {
-            "type": "group"
+            "type": "@theme"
         },
         {
             "type": "@app"
